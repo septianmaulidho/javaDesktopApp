@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="450" pageHeight="300" orientation="Landscape" columnWidth="410" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c2bf56e8-52a1-42bf-bcc6-4f2bf7f48e54">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="No_trans" class="java.lang.String"/>
+	<parameter name="Grand_total" class="java.lang.String"/>
+	<parameter name="Diskon" class="java.lang.String"/>
+	<parameter name="Total" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select * from transaksi]]>
+	</queryString>
+	<field name="No_trans" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Tgl_trans" class="java.sql.Date"/>
+	<field name="Wkt_trans" class="java.sql.Time"/>
+	<field name="Kd_brg" class="java.lang.String"/>
+	<field name="Nm_brg" class="java.lang.String"/>
+	<field name="Qty" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="modal" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Hrg_satuan" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Hrg" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Diskon" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="40" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="410" height="21" uuid="ca1e8ff6-a5a6-4337-b15d-ad3727372740"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[TB. RIZKY PUTRA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="21" width="410" height="11" uuid="cd44b15c-f98b-4d00-a7ad-d89490973d2b"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<text><![CDATA[Jl. Ki Demang Wonopawiro, Ngemplak, Piyaman, Kec. Wonosari, Kabupaten Gunung Kidul, Yogyakarta]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="32" width="409" height="1" uuid="c72e1140-a671-4ce3-94f1-1eb0cd3dedd4"/>
+			</line>
+			<line>
+				<reportElement x="1" y="34" width="408" height="1" uuid="c5691afd-cccb-4293-a9dd-6f4080ee108c"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="24" splitType="Stretch">
+			<textField>
+				<reportElement x="235" y="-210" width="100" height="20" uuid="653dafd9-7e34-478c-8ab8-214a58fa11fc"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{No_trans}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="2" width="100" height="20" uuid="ab3bd50c-2c7d-47f1-a998-6f484d8317a7"/>
+				<textFieldExpression><![CDATA[$P{No_trans}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="169" height="20" uuid="7afd7367-e32f-4611-9fd3-d1c78f4360d7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Item]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="175" y="0" width="81" height="20" uuid="7bd31eec-8303-44d5-b948-739bb4b1753b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Quantity]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="266" y="0" width="144" height="20" uuid="02c031a9-235e-4aa7-ab99-e9acceda846a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Harga]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="1" width="410" height="1" uuid="cd70f4a8-ceed-4769-bec0-7941e4aa63e0"/>
+			</line>
+			<textField>
+				<reportElement x="1" y="1" width="100" height="20" uuid="8e0ac887-360f-4fdb-b918-67a958e98579"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Nm_brg}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="175" y="1" width="81" height="20" uuid="c19574ee-8442-4879-b2b5-865935e049fd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Qty}]]></textFieldExpression>
+			</textField>
+			<textField pattern="Rp #,##0.00">
+				<reportElement x="310" y="1" width="99" height="20" uuid="158bb134-d5c4-4668-999c-18c0c6adaa8c"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Hrg}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="189" y="1" width="67" height="20" uuid="c202af1f-3ad1-435e-9be1-40c04552b11f"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Grand Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="189" y="21" width="67" height="20" uuid="b02c64ab-deb0-459f-97d4-6451f56c61b4"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Diskon]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="189" y="41" width="67" height="20" uuid="684f957c-ed6b-491b-8891-64ffd81b42e4"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<textField pattern="#,##0.00;-#,##0.00">
+				<reportElement x="289" y="1" width="121" height="20" uuid="facf8ad9-eaad-4a3f-ab77-876fc558606b"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Grand_total}]]></textFieldExpression>
+			</textField>
+			<textField pattern="Rp #,##0.00" isBlankWhenNull="true">
+				<reportElement x="288" y="23" width="121" height="20" uuid="33d3dc4e-0921-4a81-b974-a557274e1be0"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Diskon}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="289" y="41" width="121" height="20" uuid="25d82078-3f2b-4bce-8180-ba38c2f30660"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Total}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="0" width="410" height="1" uuid="f7bd0283-218a-4a64-bd9b-a3b810a3fe28"/>
+			</line>
+		</band>
+	</columnFooter>
+</jasperReport>
